@@ -1,2 +1,2 @@
 # Carnet-de-Recettes
-Site de recettes en constructif
+Site de recettes en construction
