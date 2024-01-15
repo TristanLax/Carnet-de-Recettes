@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+
+    <h1>Bienvenue dans la partie gestion des entreprises !</h1>
+    <a href="{{ path('app_entreprise_new') }}">Ajouter une nouvelle entreprise</a>
+
+    {% for entreprise in entreprises %}
+    <p>{{ entreprise.nom }} - {{ entreprise.chef }} - <a href="{{ path('app_entreprise_edit', {id: entreprise.id}) }}">Editer</a> - <a href="{{ path('app_entreprise_delete', {id: entreprise.id}) }}">Supprimer</a></p>
+    {% endfor %}
+
+{% endblock %}

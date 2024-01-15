@@ -55,6 +55,12 @@ class IndexController extends AbstractController
         $form = $this->createForm(UniteMesureType::class, $uniteMesure);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->flush();
+
+            return $this->redirectToRoute('app_uniteMesure_index');
+        }
+
         return $this->render('admin/UniteMesure/edit.html.twig', [
             'form' => $form,
             'uniteMesure' => $uniteMesure
