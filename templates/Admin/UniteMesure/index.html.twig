@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+
+    <h1>Bienvenue dans la partie gestion des unités de mesure !</h1>
+    <a href="{{ path('app_uniteMesure_new') }}">Ajouter une nouvelle unité de mesure</a>
+
+    {% for uniteMesure in unitesMesure %}
+    <p>{{ uniteMesure.nom }} - {{ uniteMesure.abreviation }} - <a href="{{ path('app_uniteMesure_edit', {id: uniteMesure.id}) }}">Editer</a> - <a href="{{ path('app_uniteMesure_delete', {id: uniteMesure.id}) }}">Supprimer</a></p>
+    {% endfor %}
+
+{% endblock %}
