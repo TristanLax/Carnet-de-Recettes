@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+
+    <h1>Bienvenue dans la partie gestion des sous sections !</h1>
+    <a href="{{ path('app_sousSection_new') }}">Ajouter une nouvelle sous-section</a>
+
+    {% for sousSection in sousSections %}
+    <p>{{ sousSection.nom }} - <a href="{{ path('app_sousSection_edit', {id: sousSection.id}) }}">Editer</a> - <a href="{{ path('app_sousSection_delete', {id: sousSection.id}) }}">Supprimer</a></p>
+    {% endfor %}
+
+{% endblock %}

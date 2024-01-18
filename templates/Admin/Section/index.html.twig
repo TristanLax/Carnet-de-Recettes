@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+
+    <h1>Bienvenue dans la partie gestion des sections !</h1>
+    <a href="{{ path('app_section_new') }}">Ajouter une nouvelle section</a>
+
+    {% for section in sections %}
+    <p>{{ section.nom }} - <a href="{{ path('app_section_edit', {id: section.id}) }}">Editer</a> - <a href="{{ path('app_section_delete', {id: section.id}) }}">Supprimer</a></p>
+    {% endfor %}
+
+{% endblock %}
